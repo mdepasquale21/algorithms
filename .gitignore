@@ -1,0 +1,7 @@
+.idea/
+node_modules/
+**/*.js
+**/*.js.*
+*.tsbuildinfo
+!clean.js
+!jest.config.js
