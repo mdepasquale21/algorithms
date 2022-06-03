@@ -1,6 +1,17 @@
 export abstract class AnagramsSolver {
     abstract solve(s1: string, s2: string): number;
 
+    protected countLetters(s: string, char: string): number {
+        const letters: string[] = this.buildArrayFromString(s);
+        let count = 0;
+        for (const letter of letters) {
+            if (letter === char) {
+                count += 1;
+            }
+        }
+        return count;
+    }
+
     protected buildArrayFromString(s: string): string[] {
         return s.split('');
     }
@@ -36,17 +47,6 @@ export class AnagramsMapSolver extends AnagramsSolver {
         }
     }
 
-    private countLetters(s: string, char: string): number {
-        const letters: string[] = this.buildArrayFromString(s);
-        let count = 0;
-        for (const letter of letters) {
-            if (letter === char) {
-                count += 1;
-            }
-        }
-        return count;
-    }
-
 }
 
 export class AnagramsHammerLoopSolver extends AnagramsSolver {
@@ -54,18 +54,15 @@ export class AnagramsHammerLoopSolver extends AnagramsSolver {
     solve(s1: string, s2: string): number {
         let counter = 0;
         for (const i of s1) {
-            if (!s2.includes(i)) {
-                counter += 1;
+            if (s2.includes(i)) {
+                const count1 = this.countLetters(s1, i);
+                const count2 = this.countLetters(s2, i);
+                counter += Math.abs(count1 - count2);
                 s1 = this.removeLetterFrom(s1, i);
+                s2 = this.removeLetterFrom(s2, i);
             }
         }
-        for (const j of s2) {
-            if (!s1.includes(j)) {
-                counter += 1;
-                s2 = this.removeLetterFrom(s2, j);
-            }
-        }
-        counter += Math.abs(s1.length - s2.length);
+        counter += s1.length + s2.length;
         return counter;
     }
 
