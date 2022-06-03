@@ -1,5 +1,5 @@
 {
-  "name": "ddd",
+  "name": "algorithms",
   "version": "1.0.0",
   "description": "Domain-Driven Design Boot Camp",
   "main": "src/main/application/application.js",

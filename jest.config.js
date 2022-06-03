@@ -1,5 +1,5 @@
 module.exports = {
-    displayName: 'ddd',
+    displayName: 'algorithms',
     preset: 'ts-jest',
     transformIgnorePatterns: ['node_modules/(?!.*\\.mjs$)'],
     globals: {
