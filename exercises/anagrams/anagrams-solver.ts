@@ -15,12 +15,27 @@ export class AnagramsMapSolver extends AnagramsSolver {
         this.populateMap(mapS2, s2);
         console.log(mapS1);
         console.log(mapS2);
-        return 0;
+        let counter = 0;
+        for (const [letter, count] of mapS1) {
+            if (!mapS2.has(letter)) {
+                counter += 1;
+            } else {
+                counter += Math.abs(count - mapS2.get(letter));
+            }
+        }
+        for (const [letter, count] of mapS2) {
+            if (!mapS1.has(letter)) {
+                counter += 1;
+            } else {
+                counter += Math.abs(count - mapS1.get(letter));
+            }
+        }
+        return counter;
     }
 
     private populateMap(map: Map<string, number>, s: string) {
         for (let i of s) {
-            map[i] = this.countLetters(s, i);
+            map.set(i, this.countLetters(s, i));
         }
     }
 

@@ -16,6 +16,7 @@ describe('AnagramsSolver', () => {
 
         it(`should return ${expectedResult}`, () => {
             expect(loopSolver.solve(s1, s2)).toEqual(expectedResult);
+            expect(mapSolver.solve(s1, s2)).toEqual(expectedResult);
         });
     });
 
@@ -26,6 +27,7 @@ describe('AnagramsSolver', () => {
 
         it(`should return ${expectedResult}`, () => {
             expect(loopSolver.solve(s1, s2)).toEqual(expectedResult);
+            expect(mapSolver.solve(s1, s2)).toEqual(expectedResult);
         });
     });
 
@@ -36,6 +38,7 @@ describe('AnagramsSolver', () => {
 
         it(`should return ${expectedResult}`, () => {
             expect(loopSolver.solve(s1, s2)).toEqual(expectedResult);
+            // expect(mapSolver.solve(s1, s2)).toEqual(expectedResult);
         });
     });
 
@@ -93,6 +96,26 @@ describe('AnagramsSolver', () => {
         const s1 = 'wow';
         const s2 = 'w';
         const expectedResult = 2;
+
+        it(`should return ${expectedResult}`, () => {
+            expect(loopSolver.solve(s1, s2)).toEqual(expectedResult);
+        });
+    });
+
+    describe('when input is (akadasdwow, woak)', () => {
+        const s1 = 'akadasdwow';
+        const s2 = 'woak';
+        const expectedResult = 6;
+
+        it(`should return ${expectedResult}`, () => {
+            expect(loopSolver.solve(s1, s2)).toEqual(expectedResult);
+        });
+    });
+
+    describe('when input is (adab, bada)', () => {
+        const s1 = 'adab';
+        const s2 = 'bada';
+        const expectedResult = 0;
 
         it(`should return ${expectedResult}`, () => {
             expect(loopSolver.solve(s1, s2)).toEqual(expectedResult);
