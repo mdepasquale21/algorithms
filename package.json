@@ -10,6 +10,7 @@
     "run": "nodemon --exec npm run start",
     "start-anagrams": "ts-node exercises/anagrams/anagrams.ts",
     "start-min-max": "ts-node exercises/min-max/min-max.ts",
+    "start-jesse-and-cookies": "ts-node exercises/jesse-and-cookies/jesse-and-cookies.ts",
     "clean": "node ./clean.js",
     "unit-test": "nodemon --ext ts --exec npm run _unit-test",
     "_unit-test": "npm run clean && jest || exit 0"
