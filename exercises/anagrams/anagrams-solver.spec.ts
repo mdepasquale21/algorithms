@@ -130,4 +130,37 @@ describe('AnagramsSolver', () => {
         });
     });
 
+    describe('when input is (cacac, acacia)', () => {
+        const s1 = 'cacac';
+        const s2 = 'acacia';
+        const expectedResult = 3;
+
+        it(`should return ${expectedResult}`, () => {
+            expect(loopSolver.solve(s1, s2)).toEqual(expectedResult);
+            expect(mapSolver.solve(s1, s2)).toEqual(expectedResult);
+        });
+    });
+
+    describe('when input is (baobab, ababia)', () => {
+        const s1 = 'baobab';
+        const s2 = 'ababia';
+        const expectedResult = 4;
+
+        it(`should return ${expectedResult}`, () => {
+            expect(loopSolver.solve(s1, s2)).toEqual(expectedResult);
+            expect(mapSolver.solve(s1, s2)).toEqual(expectedResult);
+        });
+    });
+
+    describe('when input is (baobab, baba)', () => {
+        const s1 = 'baobab';
+        const s2 = 'baba';
+        const expectedResult = 2;
+
+        it(`should return ${expectedResult}`, () => {
+            expect(loopSolver.solve(s1, s2)).toEqual(expectedResult);
+            expect(mapSolver.solve(s1, s2)).toEqual(expectedResult);
+        });
+    });
+
 });
