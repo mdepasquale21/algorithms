@@ -1,31 +1,55 @@
 // https://www.hackerrank.com/challenges/jesse-and-cookies/problem
 
+export class JesseAndCookies {
+
+    private counter = 0;
+
+    constructor(private readonly cookies: number[],
+                private readonly minSweetness: number) {
+        console.log(`k: ${this.minSweetness}`);
+        console.log(`sweetness array: ${this.cookies}`);
+        console.log('\n');
+    }
+
+    solve(): number {
+        while (this.isSomeNumberSmallerThan()) {
+            this.cookies.sort((a, b) => a - b);
+            console.log(this.cookies);
+            const leastTwo = this.cookies.splice(0, 2);
+            console.log(leastTwo);
+            const newSweetness = leastTwo[0] + 2 * leastTwo[1];
+            console.log(newSweetness);
+            this.cookies.push(newSweetness);
+            this.counter += 1;
+        }
+        return this.counter;
+    }
+
+    private isSomeNumberSmallerThan() {
+        return this.cookies.some((n: number) => n < this.minSweetness);
+    }
+
+    getCookies(): number[] {
+        return this.cookies;
+    }
+
+    getCounter(): number {
+        return this.counter;
+    }
+
+}
+
 console.log('Jesse and Cookies');
 
 const k: number = 9;
-let array: number[] = [2, 7, 3, 6, 4, 6];
+const cookiesList: number[] = [2, 7, 3, 6, 4, 6];
 
-console.log(`k: ${k}`);
-console.log(`sweetness array: ${array}`);
-console.log('\n');
+const jesseAndCookies1: JesseAndCookies = new JesseAndCookies(cookiesList, k);
 
-let counter = 0;
-while (isSomeNumberSmallerThan(array, k)) {
-    array.sort((a, b) => a - b);
-    console.log(array);
-    const leastTwo = array.splice(0, 2);
-    console.log(leastTwo);
-    const newSweetness = leastTwo[0] + 2 * leastTwo[1];
-    console.log(newSweetness);
-    array.push(newSweetness);
-    counter += 1;
-}
+jesseAndCookies1.solve();
+
 console.log('\n');
 console.log('final cookies:');
-console.log(array);
+console.log(jesseAndCookies1.getCookies());
 console.log('final number of operations required:');
-console.log(counter);
-
-function isSomeNumberSmallerThan(list: number[], k: number) {
-    return list.some((n: number) => n < k);
-}
+console.log(jesseAndCookies1.getCounter());
