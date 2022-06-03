@@ -1,7 +1,7 @@
 // https://www.hackerrank.com/challenges/making-anagrams/problem
 
 import * as promptSync from 'prompt-sync';
-import { AnagramsHammerLoopSolver, AnagramsMapSolver, AnagramsSolver } from './anagrams/anagrams-solver';
+import { AnagramsHammerLoopSolver, AnagramsMapSolver, AnagramsSolver } from './anagrams-solver';
 
 const prompt = promptSync();
 
