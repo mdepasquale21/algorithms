@@ -1,7 +1,7 @@
 // https://www.hackerrank.com/challenges/making-anagrams/problem
 
 import * as promptSync from 'prompt-sync';
-import { AnagramsHammerLoopSolver, IAnagramsSolver } from './anagrams/anagrams-solver';
+import { AnagramsHammerLoopSolver, AnagramsMapSolver, AnagramsSolver } from './anagrams/anagrams-solver';
 
 const prompt = promptSync();
 
@@ -19,9 +19,13 @@ const input2: string = prompt('second string: ', 'amnop', {});
 console.log('these are the inputs:');
 console.log(`${input1},${input2}`);
 
-const loopSolver: IAnagramsSolver = new AnagramsHammerLoopSolver();
+const loopSolver: AnagramsSolver = new AnagramsHammerLoopSolver();
 const loopSolverResult: number = loopSolver.solve(input1, input2);
+
+const mapSolver: AnagramsSolver = new AnagramsMapSolver();
+const mapSolverResult: number = mapSolver.solve(input1, input2);
 
 console.log('\n');
 console.log('this is the minimum number of character deletions required to make the two inputs anagrams:\n');
-console.log(loopSolverResult);
+console.log(`loop solver: ${loopSolverResult}`);
+console.log(`map solver: ${mapSolverResult}`);

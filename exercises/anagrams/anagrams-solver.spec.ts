@@ -1,95 +1,91 @@
-import { AnagramsHammerLoopSolver, IAnagramsSolver } from './anagrams-solver';
+import { AnagramsHammerLoopSolver } from './anagrams-solver';
 
 describe('AnagramsSolver', () => {
+    let loopSolver: AnagramsHammerLoopSolver;
 
-    describe('AnagramsHammerLoopSolver', () => {
-        let solver: IAnagramsSolver;
+    beforeEach(() => {
+        loopSolver = new AnagramsHammerLoopSolver();
+    });
 
-        beforeEach(() => {
-            solver = new AnagramsHammerLoopSolver();
+    describe('when input is default (abc, amnop)', () => {
+        let s1 = 'abc';
+        let s2 = 'amnop';
+
+        it('should return 6', () => {
+            expect(loopSolver.solve(s1, s2)).toEqual(6);
         });
+    });
 
-        describe('when input is default (abc, amnop)', () => {
-            let s1 = 'abc';
-            let s2 = 'amnop';
+    describe('when input is (cde, abc)', () => {
+        let s1 = 'cde';
+        let s2 = 'abc';
 
-            it('should return 6', () => {
-                expect(solver.solve(s1, s2)).toEqual(6);
-            });
+        it('should return 4', () => {
+            expect(loopSolver.solve(s1, s2)).toEqual(4);
         });
+    });
 
-        describe('when input is (cde, abc)', () => {
-            let s1 = 'cde';
-            let s2 = 'abc';
+    describe('when input is (aaab, abc)', () => {
+        let s1 = 'aaab';
+        let s2 = 'abc';
 
-            it('should return 4', () => {
-                expect(solver.solve(s1, s2)).toEqual(4);
-            });
+        it('should return 3', () => {
+            expect(loopSolver.solve(s1, s2)).toEqual(3);
         });
+    });
 
-        describe('when input is (aaab, abc)', () => {
-            let s1 = 'aaab';
-            let s2 = 'abc';
+    describe('when input is (aaabaasd, akcd)', () => {
+        let s1 = 'aaabaasd';
+        let s2 = 'akcd';
 
-            it('should return 3', () => {
-                expect(solver.solve(s1, s2)).toEqual(3);
-            });
+        it('should return 8', () => {
+            expect(loopSolver.solve(s1, s2)).toEqual(8);
         });
+    });
 
-        describe('when input is (aaabaasd, akcd)', () => {
-            let s1 = 'aaabaasd';
-            let s2 = 'akcd';
+    describe('when input is (aaabbaasdt, abkcsd)', () => {
+        let s1 = 'aaabbaasdt';
+        let s2 = 'abkcsd';
 
-            it('should return 8', () => {
-                expect(solver.solve(s1, s2)).toEqual(8);
-            });
+        it('should return 8', () => {
+            expect(loopSolver.solve(s1, s2)).toEqual(8);
         });
+    });
 
-        describe('when input is (aaabbaasdt, abkcsd)', () => {
-            let s1 = 'aaabbaasdt';
-            let s2 = 'abkcsd';
+    describe('when input is (kmom, ambkcsd)', () => {
+        let s1 = 'kmom';
+        let s2 = 'ambkcsd';
 
-            it('should return 8', () => {
-                expect(solver.solve(s1, s2)).toEqual(8);
-            });
+        it('should return 7', () => {
+            expect(loopSolver.solve(s1, s2)).toEqual(7);
         });
+    });
 
-        describe('when input is (kmom, ambkcsd)', () => {
-            let s1 = 'kmom';
-            let s2 = 'ambkcsd';
+    describe('when input is (aaaaaaaaaasd, askd)', () => {
+        let s1 = 'aaaaaaaaaasd';
+        let s2 = 'akd';
 
-            it('should return 7', () => {
-                expect(solver.solve(s1, s2)).toEqual(7);
-            });
+        it('should return 11', () => {
+            expect(loopSolver.solve(s1, s2)).toEqual(11);
         });
+    });
 
-        describe('when input is (aaaaaaaaaasd, askd)', () => {
-            let s1 = 'aaaaaaaaaasd';
-            let s2 = 'akd';
+    describe('when input is (babbablooba, abo)', () => {
+        let s1 = 'babbablooba';
+        let s2 = 'abol';
 
-            it('should return 11', () => {
-                expect(solver.solve(s1, s2)).toEqual(11);
-            });
+        it('should return 7', () => {
+            expect(loopSolver.solve(s1, s2)).toEqual(7);
         });
+    });
 
-        describe('when input is (babbablooba, abo)', () => {
-            let s1 = 'babbablooba';
-            let s2 = 'abol';
+    describe('when input is (babbablooba, abo)', () => {
+        let s1 = 'wow';
+        let s2 = 'w';
 
-            it('should return 7', () => {
-                expect(solver.solve(s1, s2)).toEqual(7);
-            });
+        it('should return 2', () => {
+            expect(loopSolver.solve(s1, s2)).toEqual(2);
         });
-
-        describe('when input is (babbablooba, abo)', () => {
-            let s1 = 'wow';
-            let s2 = 'w';
-
-            it('should return 2', () => {
-                expect(solver.solve(s1, s2)).toEqual(2);
-            });
-        });
-
     });
 
 });

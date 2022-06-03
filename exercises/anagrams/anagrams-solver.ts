@@ -1,6 +1,45 @@
-export class AnagramsHammerLoopSolver implements IAnagramsSolver {
+export abstract class AnagramsSolver {
+    abstract solve(s1: string, s2: string): number;
 
-    solve(s1, s2): number {
+    protected buildArrayFromString(s: string): string[] {
+        return s.split('');
+    }
+}
+
+export class AnagramsMapSolver extends AnagramsSolver {
+
+    solve(s1: string, s2: string): number {
+        let mapS1 = new Map<string, number>([]);
+        let mapS2 = new Map<string, number>([]);
+        this.populateMap(mapS1, s1);
+        this.populateMap(mapS2, s2);
+        console.log(mapS1);
+        console.log(mapS2);
+        return 0;
+    }
+
+    private populateMap(map: Map<string, number>, s: string) {
+        for (let i of s) {
+            map[i] = this.countLetters(s, i);
+        }
+    }
+
+    private countLetters(s: string, char: string): number {
+        const letters: string[] = this.buildArrayFromString(s);
+        let count = 0;
+        for (let letter of letters) {
+            if (letter === char) {
+                count += 1;
+            }
+        }
+        return count;
+    }
+
+}
+
+export class AnagramsHammerLoopSolver extends AnagramsSolver {
+
+    solve(s1: string, s2: string): number {
         let counter = 0;
         for (let i of s1) {
             if (!s2.includes(i)) {
@@ -14,7 +53,6 @@ export class AnagramsHammerLoopSolver implements IAnagramsSolver {
                 s2 = this.removeLetterFrom(s2, j);
             }
         }
-        console.log(s1, s2);
         counter += Math.abs(s1.length - s2.length);
         return counter;
     }
@@ -24,12 +62,4 @@ export class AnagramsHammerLoopSolver implements IAnagramsSolver {
         return letters.filter((letter) => letter !== char).join('');
     }
 
-    private buildArrayFromString(s: string): string[] {
-        return s.split('');
-    }
-
-}
-
-export interface IAnagramsSolver {
-    solve(s1: string, s2: string): number;
 }
