@@ -13,28 +13,25 @@ export class AnagramsMapSolver extends AnagramsSolver {
         let mapS2 = new Map<string, number>([]);
         this.populateMap(mapS1, s1);
         this.populateMap(mapS2, s2);
-        console.log(mapS1);
-        console.log(mapS2);
         let counter = 0;
         for (const [letter, count] of mapS1) {
-            if (!mapS2.has(letter)) {
-                counter += 1;
-            } else {
+            if (mapS2.has(letter)) {
                 counter += Math.abs(count - mapS2.get(letter));
+                mapS2.delete(letter);
+                mapS1.delete(letter);
             }
         }
-        for (const [letter, count] of mapS2) {
-            if (!mapS1.has(letter)) {
-                counter += 1;
-            } else {
-                counter += Math.abs(count - mapS1.get(letter));
-            }
+        for (const value of mapS1.values()) {
+            counter += value;
+        }
+        for (const value of mapS2.values()) {
+            counter += value;
         }
         return counter;
     }
 
     private populateMap(map: Map<string, number>, s: string) {
-        for (let i of s) {
+        for (const i of s) {
             map.set(i, this.countLetters(s, i));
         }
     }
@@ -42,7 +39,7 @@ export class AnagramsMapSolver extends AnagramsSolver {
     private countLetters(s: string, char: string): number {
         const letters: string[] = this.buildArrayFromString(s);
         let count = 0;
-        for (let letter of letters) {
+        for (const letter of letters) {
             if (letter === char) {
                 count += 1;
             }
@@ -56,13 +53,13 @@ export class AnagramsHammerLoopSolver extends AnagramsSolver {
 
     solve(s1: string, s2: string): number {
         let counter = 0;
-        for (let i of s1) {
+        for (const i of s1) {
             if (!s2.includes(i)) {
                 counter += 1;
                 s1 = this.removeLetterFrom(s1, i);
             }
         }
-        for (let j of s2) {
+        for (const j of s2) {
             if (!s1.includes(j)) {
                 counter += 1;
                 s2 = this.removeLetterFrom(s2, j);

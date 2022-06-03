@@ -38,7 +38,7 @@ describe('AnagramsSolver', () => {
 
         it(`should return ${expectedResult}`, () => {
             expect(loopSolver.solve(s1, s2)).toEqual(expectedResult);
-            // expect(mapSolver.solve(s1, s2)).toEqual(expectedResult);
+            expect(mapSolver.solve(s1, s2)).toEqual(expectedResult);
         });
     });
 
@@ -49,6 +49,7 @@ describe('AnagramsSolver', () => {
 
         it(`should return ${expectedResult}`, () => {
             expect(loopSolver.solve(s1, s2)).toEqual(expectedResult);
+            expect(mapSolver.solve(s1, s2)).toEqual(expectedResult);
         });
     });
 
@@ -59,6 +60,7 @@ describe('AnagramsSolver', () => {
 
         it(`should return ${expectedResult}`, () => {
             expect(loopSolver.solve(s1, s2)).toEqual(expectedResult);
+            expect(mapSolver.solve(s1, s2)).toEqual(expectedResult);
         });
     });
 
@@ -69,6 +71,7 @@ describe('AnagramsSolver', () => {
 
         it(`should return ${expectedResult}`, () => {
             expect(loopSolver.solve(s1, s2)).toEqual(expectedResult);
+            expect(mapSolver.solve(s1, s2)).toEqual(expectedResult);
         });
     });
 
@@ -79,6 +82,7 @@ describe('AnagramsSolver', () => {
 
         it(`should return ${expectedResult}`, () => {
             expect(loopSolver.solve(s1, s2)).toEqual(expectedResult);
+            expect(mapSolver.solve(s1, s2)).toEqual(expectedResult);
         });
     });
 
@@ -89,6 +93,7 @@ describe('AnagramsSolver', () => {
 
         it(`should return ${expectedResult}`, () => {
             expect(loopSolver.solve(s1, s2)).toEqual(expectedResult);
+            expect(mapSolver.solve(s1, s2)).toEqual(expectedResult);
         });
     });
 
@@ -99,6 +104,7 @@ describe('AnagramsSolver', () => {
 
         it(`should return ${expectedResult}`, () => {
             expect(loopSolver.solve(s1, s2)).toEqual(expectedResult);
+            expect(mapSolver.solve(s1, s2)).toEqual(expectedResult);
         });
     });
 
@@ -109,6 +115,7 @@ describe('AnagramsSolver', () => {
 
         it(`should return ${expectedResult}`, () => {
             expect(loopSolver.solve(s1, s2)).toEqual(expectedResult);
+            expect(mapSolver.solve(s1, s2)).toEqual(expectedResult);
         });
     });
 
@@ -119,6 +126,7 @@ describe('AnagramsSolver', () => {
 
         it(`should return ${expectedResult}`, () => {
             expect(loopSolver.solve(s1, s2)).toEqual(expectedResult);
+            expect(mapSolver.solve(s1, s2)).toEqual(expectedResult);
         });
     });
 
