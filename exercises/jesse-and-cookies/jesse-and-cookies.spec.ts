@@ -71,4 +71,38 @@ describe('JesseAndCookies', () => {
         });
     });
 
+    describe('when k = 10 and array is [2, 4]', () => {
+        const k: number = 10;
+        const array: number[] = [2, 4];
+
+        const expectedResult: number = 1;
+        let result: number;
+
+        beforeEach(() => {
+            jesseAndCookies = new JesseAndCookies(array, k);
+            result = jesseAndCookies.solve();
+        });
+
+        it(`should return ${expectedResult}`, () => {
+            expect(result).toEqual(expectedResult);
+        });
+    });
+
+    describe('when k = 10 and array is [25]', () => {
+        const k: number = 10;
+        const array: number[] = [25];
+
+        const expectedResult: number = 0;
+        let result: number;
+
+        beforeEach(() => {
+            jesseAndCookies = new JesseAndCookies(array, k);
+            result = jesseAndCookies.solve();
+        });
+
+        it(`should return ${expectedResult}`, () => {
+            expect(result).toEqual(expectedResult);
+        });
+    });
+
 });
