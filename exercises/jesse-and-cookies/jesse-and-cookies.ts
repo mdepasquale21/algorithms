@@ -13,6 +13,10 @@ export class JesseAndCookies {
 
     solve(): number {
         while (this.isSomeNumberSmallerThan()) {
+            if (this.cookies.length === 1) {
+                this.counter = -1;
+                return this.counter;
+            }
             this.cookies.sort((a, b) => a - b);
             console.log(this.cookies);
             const leastTwo = this.cookies.splice(0, 2);
@@ -44,12 +48,12 @@ console.log('Jesse and Cookies');
 const k: number = 9;
 const cookiesList: number[] = [2, 7, 3, 6, 4, 6];
 
-const jesseAndCookies1: JesseAndCookies = new JesseAndCookies(cookiesList, k);
+const jesseAndCookies: JesseAndCookies = new JesseAndCookies(cookiesList, k);
 
-jesseAndCookies1.solve();
+jesseAndCookies.solve();
 
 console.log('\n');
 console.log('final cookies:');
-console.log(jesseAndCookies1.getCookies());
+console.log(jesseAndCookies.getCookies());
 console.log('final number of operations required:');
-console.log(jesseAndCookies1.getCounter());
+console.log(jesseAndCookies.getCounter());
