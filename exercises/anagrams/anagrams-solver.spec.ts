@@ -174,4 +174,15 @@ describe('AnagramsSolver', () => {
         });
     });
 
+    describe('when input is (anna, nana)', () => {
+        const s1 = 'anna';
+        const s2 = 'nana';
+        const expectedResult = 0;
+
+        it(`should return ${expectedResult}`, () => {
+            expect(loopSolver.solve(s1, s2)).toEqual(expectedResult);
+            expect(mapSolver.solve(s1, s2)).toEqual(expectedResult);
+        });
+    });
+
 });
