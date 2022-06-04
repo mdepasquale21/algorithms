@@ -12,7 +12,7 @@ export class JesseAndCookies {
     }
 
     solve(): number {
-        while (this.isSomeNumberSmallerThan()) {
+        while (this.isSomeNumberSmallerThanMinSweetness()) {
             if (this.cookies.length === 1) {
                 this.counter = -1;
                 return this.counter;
@@ -29,16 +29,12 @@ export class JesseAndCookies {
         return this.counter;
     }
 
-    private isSomeNumberSmallerThan() {
+    private isSomeNumberSmallerThanMinSweetness() {
         return this.cookies.some((n: number) => n < this.minSweetness);
     }
 
     getCookies(): number[] {
         return this.cookies;
-    }
-
-    getCounter(): number {
-        return this.counter;
     }
 
 }
@@ -50,10 +46,10 @@ const cookiesList: number[] = [2, 7, 3, 6, 4, 6];
 
 const jesseAndCookies: JesseAndCookies = new JesseAndCookies(cookiesList, k);
 
-jesseAndCookies.solve();
+const result: number = jesseAndCookies.solve();
 
 console.log('\n');
 console.log('final cookies:');
 console.log(jesseAndCookies.getCookies());
 console.log('final number of operations required:');
-console.log(jesseAndCookies.getCounter());
+console.log(result);

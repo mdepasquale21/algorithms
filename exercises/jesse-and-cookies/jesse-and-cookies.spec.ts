@@ -7,13 +7,16 @@ describe('Jess and Cookies', () => {
         const k: number = 9;
         const array: number[] = [2, 7, 3, 6, 4, 6];
 
+        const expectedResult: number = 4;
+        let result: number;
+
         beforeEach(() => {
             jesseAndCookies = new JesseAndCookies(array, k);
-            jesseAndCookies.solve();
+            result = jesseAndCookies.solve();
         });
 
-        it('should return 4', () => {
-            expect(jesseAndCookies.getCounter()).toEqual(4);
+        it(`should return ${expectedResult}`, () => {
+            expect(result).toEqual(expectedResult);
         });
     });
 
@@ -21,13 +24,16 @@ describe('Jess and Cookies', () => {
         const k: number = 7;
         const array: number[] = [1, 2, 3, 9, 10, 12];
 
+        const expectedResult: number = 2;
+        let result: number;
+
         beforeEach(() => {
             jesseAndCookies = new JesseAndCookies(array, k);
-            jesseAndCookies.solve();
+            result = jesseAndCookies.solve();
         });
 
-        it('should return 2', () => {
-            expect(jesseAndCookies.getCounter()).toEqual(2);
+        it(`should return ${expectedResult}`, () => {
+            expect(result).toEqual(expectedResult);
         });
     });
 
@@ -35,13 +41,16 @@ describe('Jess and Cookies', () => {
         const k: number = 3;
         const array: number[] = [2];
 
+        const expectedResult: number = -1;
+        let result: number;
+
         beforeEach(() => {
             jesseAndCookies = new JesseAndCookies(array, k);
-            jesseAndCookies.solve();
+            result = jesseAndCookies.solve();
         });
 
-        it('should return -1 immediately', () => {
-            expect(jesseAndCookies.getCounter()).toEqual(-1);
+        it(`should return immediately ${expectedResult}`, () => {
+            expect(result).toEqual(expectedResult);
         });
     });
 
@@ -49,13 +58,16 @@ describe('Jess and Cookies', () => {
         const k: number = 22;
         const array: number[] = [1, 1, 1, 1, 1, 1];
 
+        const expectedResult: number = -1;
+        let result: number;
+
         beforeEach(() => {
             jesseAndCookies = new JesseAndCookies(array, k);
-            jesseAndCookies.solve();
+            result = jesseAndCookies.solve();
         });
 
-        it('should return -1 after a some iterations', () => {
-            expect(jesseAndCookies.getCounter()).toEqual(-1);
+        it(`should return ${expectedResult} after a few iterations`, () => {
+            expect(result).toEqual(expectedResult);
         });
     });
 
