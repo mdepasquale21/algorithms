@@ -163,4 +163,15 @@ describe('AnagramsSolver', () => {
         });
     });
 
+    describe('when input is (abba, akka)', () => {
+        const s1 = 'abba';
+        const s2 = 'akka';
+        const expectedResult = 4;
+
+        it(`should return ${expectedResult}`, () => {
+            expect(loopSolver.solve(s1, s2)).toEqual(expectedResult);
+            expect(mapSolver.solve(s1, s2)).toEqual(expectedResult);
+        });
+    });
+
 });
