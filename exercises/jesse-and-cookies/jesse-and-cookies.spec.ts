@@ -1,6 +1,6 @@
 import { JesseAndCookies } from './jesse-and-cookies';
 
-describe('Jess and Cookies', () => {
+describe('JesseAndCookies', () => {
     let jesseAndCookies: JesseAndCookies;
 
     describe('when k = 9 and array is [2, 7, 3, 6, 4, 6]', () => {
