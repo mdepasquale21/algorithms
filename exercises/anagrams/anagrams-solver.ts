@@ -105,20 +105,14 @@ export class AnagramsHammerLoopSolver extends AnagramsSolver {
 export class AnagramsSmartLoopSolver extends AnagramsSolver {
 
     solve(s1: string, s2: string): number {
-        const array1: string[] = this.buildArrayFromString(s1);
-        let counter = 0;
-        let lettersInCommon: number = 0;
-        for (let i = 0; i < array1.length; i++) {
-            const letterToRemove = s1.charAt(i);
-            if (s2.includes(letterToRemove)) {
-                array1.splice(i, 1);
-                lettersInCommon++;
-            }
+        const counters: number[] = Array.from({length: 26}, (_, i) => 0);
+        for (let i = 0; i < s1.length; i++) {
+            counters[s1.charAt(i).charCodeAt(0) - 'a'.charCodeAt(0)]++;
         }
-        counter += array1.length + s2.length - 2 * lettersInCommon;
-        // return counter;
-        // todo fix
-        return new AnagramsHammerLoopSolver().solve(s1, s2);
+        for (let i = 0; i < s2.length; i++) {
+            counters[s2.charAt(i).charCodeAt(0) - 'a'.charCodeAt(0)]--;
+        }
+        return counters.reduce((x, y) => Math.abs(x) + Math.abs(y));
     }
 
 }
