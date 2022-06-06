@@ -18,16 +18,20 @@ describe('AnagramsSolver', () => {
         smartMapSolver = new AnagramsSmartMapSolver();
     });
 
+    function thenShouldObtainExpectedResult(s1: string, s2: string, expectedResult: number) {
+        expect(dumbLoopSolver.solve(s1, s2)).toEqual(expectedResult);
+        expect(smartLoopSolver.solve(s1, s2)).toEqual(expectedResult);
+        expect(mapSolver.solve(s1, s2)).toEqual(expectedResult);
+        expect(smartMapSolver.solve(s1, s2)).toEqual(expectedResult);
+    }
+
     describe('when input is default (abc, amnop)', () => {
         const s1 = 'abc';
         const s2 = 'amnop';
         const expectedResult = 6;
 
         it(`should return ${expectedResult}`, () => {
-            expect(dumbLoopSolver.solve(s1, s2)).toEqual(expectedResult);
-            expect(smartLoopSolver.solve(s1, s2)).toEqual(expectedResult);
-            expect(mapSolver.solve(s1, s2)).toEqual(expectedResult);
-            expect(smartMapSolver.solve(s1, s2)).toEqual(expectedResult);
+            thenShouldObtainExpectedResult(s1, s2, expectedResult);
         });
     });
 
@@ -37,10 +41,7 @@ describe('AnagramsSolver', () => {
         const expectedResult = 4;
 
         it(`should return ${expectedResult}`, () => {
-            expect(dumbLoopSolver.solve(s1, s2)).toEqual(expectedResult);
-            expect(smartLoopSolver.solve(s1, s2)).toEqual(expectedResult);
-            expect(mapSolver.solve(s1, s2)).toEqual(expectedResult);
-            expect(smartMapSolver.solve(s1, s2)).toEqual(expectedResult);
+            thenShouldObtainExpectedResult(s1, s2, expectedResult);
         });
     });
 
@@ -50,10 +51,7 @@ describe('AnagramsSolver', () => {
         const expectedResult = 3;
 
         it(`should return ${expectedResult}`, () => {
-            expect(dumbLoopSolver.solve(s1, s2)).toEqual(expectedResult);
-            expect(smartLoopSolver.solve(s1, s2)).toEqual(expectedResult);
-            expect(mapSolver.solve(s1, s2)).toEqual(expectedResult);
-            expect(smartMapSolver.solve(s1, s2)).toEqual(expectedResult);
+            thenShouldObtainExpectedResult(s1, s2, expectedResult);
         });
     });
 
@@ -63,10 +61,7 @@ describe('AnagramsSolver', () => {
         const expectedResult = 8;
 
         it(`should return ${expectedResult}`, () => {
-            expect(dumbLoopSolver.solve(s1, s2)).toEqual(expectedResult);
-            expect(smartLoopSolver.solve(s1, s2)).toEqual(expectedResult);
-            expect(mapSolver.solve(s1, s2)).toEqual(expectedResult);
-            expect(smartMapSolver.solve(s1, s2)).toEqual(expectedResult);
+            thenShouldObtainExpectedResult(s1, s2, expectedResult);
         });
     });
 
@@ -76,10 +71,7 @@ describe('AnagramsSolver', () => {
         const expectedResult = 8;
 
         it(`should return ${expectedResult}`, () => {
-            expect(dumbLoopSolver.solve(s1, s2)).toEqual(expectedResult);
-            expect(smartLoopSolver.solve(s1, s2)).toEqual(expectedResult);
-            expect(mapSolver.solve(s1, s2)).toEqual(expectedResult);
-            expect(smartMapSolver.solve(s1, s2)).toEqual(expectedResult);
+            thenShouldObtainExpectedResult(s1, s2, expectedResult);
         });
     });
 
@@ -89,10 +81,7 @@ describe('AnagramsSolver', () => {
         const expectedResult = 7;
 
         it(`should return ${expectedResult}`, () => {
-            expect(dumbLoopSolver.solve(s1, s2)).toEqual(expectedResult);
-            expect(smartLoopSolver.solve(s1, s2)).toEqual(expectedResult);
-            expect(mapSolver.solve(s1, s2)).toEqual(expectedResult);
-            expect(smartMapSolver.solve(s1, s2)).toEqual(expectedResult);
+            thenShouldObtainExpectedResult(s1, s2, expectedResult);
         });
     });
 
@@ -102,10 +91,7 @@ describe('AnagramsSolver', () => {
         const expectedResult = 11;
 
         it(`should return ${expectedResult}`, () => {
-            expect(dumbLoopSolver.solve(s1, s2)).toEqual(expectedResult);
-            expect(smartLoopSolver.solve(s1, s2)).toEqual(expectedResult);
-            expect(mapSolver.solve(s1, s2)).toEqual(expectedResult);
-            expect(smartMapSolver.solve(s1, s2)).toEqual(expectedResult);
+            thenShouldObtainExpectedResult(s1, s2, expectedResult);
         });
     });
 
@@ -115,10 +101,7 @@ describe('AnagramsSolver', () => {
         const expectedResult = 7;
 
         it(`should return ${expectedResult}`, () => {
-            expect(dumbLoopSolver.solve(s1, s2)).toEqual(expectedResult);
-            expect(smartLoopSolver.solve(s1, s2)).toEqual(expectedResult);
-            expect(mapSolver.solve(s1, s2)).toEqual(expectedResult);
-            expect(smartMapSolver.solve(s1, s2)).toEqual(expectedResult);
+            thenShouldObtainExpectedResult(s1, s2, expectedResult);
         });
     });
 
@@ -128,10 +111,7 @@ describe('AnagramsSolver', () => {
         const expectedResult = 2;
 
         it(`should return ${expectedResult}`, () => {
-            expect(dumbLoopSolver.solve(s1, s2)).toEqual(expectedResult);
-            expect(smartLoopSolver.solve(s1, s2)).toEqual(expectedResult);
-            expect(mapSolver.solve(s1, s2)).toEqual(expectedResult);
-            expect(smartMapSolver.solve(s1, s2)).toEqual(expectedResult);
+            thenShouldObtainExpectedResult(s1, s2, expectedResult);
         });
     });
 
@@ -141,10 +121,7 @@ describe('AnagramsSolver', () => {
         const expectedResult = 6;
 
         it(`should return ${expectedResult}`, () => {
-            expect(dumbLoopSolver.solve(s1, s2)).toEqual(expectedResult);
-            expect(smartLoopSolver.solve(s1, s2)).toEqual(expectedResult);
-            expect(mapSolver.solve(s1, s2)).toEqual(expectedResult);
-            expect(smartMapSolver.solve(s1, s2)).toEqual(expectedResult);
+            thenShouldObtainExpectedResult(s1, s2, expectedResult);
         });
     });
 
@@ -154,10 +131,7 @@ describe('AnagramsSolver', () => {
         const expectedResult = 0;
 
         it(`should return ${expectedResult}`, () => {
-            expect(dumbLoopSolver.solve(s1, s2)).toEqual(expectedResult);
-            expect(smartLoopSolver.solve(s1, s2)).toEqual(expectedResult);
-            expect(mapSolver.solve(s1, s2)).toEqual(expectedResult);
-            expect(smartMapSolver.solve(s1, s2)).toEqual(expectedResult);
+            thenShouldObtainExpectedResult(s1, s2, expectedResult);
         });
     });
 
@@ -167,10 +141,7 @@ describe('AnagramsSolver', () => {
         const expectedResult = 3;
 
         it(`should return ${expectedResult}`, () => {
-            expect(dumbLoopSolver.solve(s1, s2)).toEqual(expectedResult);
-            expect(smartLoopSolver.solve(s1, s2)).toEqual(expectedResult);
-            expect(mapSolver.solve(s1, s2)).toEqual(expectedResult);
-            expect(smartMapSolver.solve(s1, s2)).toEqual(expectedResult);
+            thenShouldObtainExpectedResult(s1, s2, expectedResult);
         });
     });
 
@@ -180,10 +151,7 @@ describe('AnagramsSolver', () => {
         const expectedResult = 4;
 
         it(`should return ${expectedResult}`, () => {
-            expect(dumbLoopSolver.solve(s1, s2)).toEqual(expectedResult);
-            expect(smartLoopSolver.solve(s1, s2)).toEqual(expectedResult);
-            expect(mapSolver.solve(s1, s2)).toEqual(expectedResult);
-            expect(smartMapSolver.solve(s1, s2)).toEqual(expectedResult);
+            thenShouldObtainExpectedResult(s1, s2, expectedResult);
         });
     });
 
@@ -193,10 +161,7 @@ describe('AnagramsSolver', () => {
         const expectedResult = 2;
 
         it(`should return ${expectedResult}`, () => {
-            expect(dumbLoopSolver.solve(s1, s2)).toEqual(expectedResult);
-            expect(smartLoopSolver.solve(s1, s2)).toEqual(expectedResult);
-            expect(mapSolver.solve(s1, s2)).toEqual(expectedResult);
-            expect(smartMapSolver.solve(s1, s2)).toEqual(expectedResult);
+            thenShouldObtainExpectedResult(s1, s2, expectedResult);
         });
     });
 
@@ -206,10 +171,7 @@ describe('AnagramsSolver', () => {
         const expectedResult = 4;
 
         it(`should return ${expectedResult}`, () => {
-            expect(dumbLoopSolver.solve(s1, s2)).toEqual(expectedResult);
-            expect(smartLoopSolver.solve(s1, s2)).toEqual(expectedResult);
-            expect(mapSolver.solve(s1, s2)).toEqual(expectedResult);
-            expect(smartMapSolver.solve(s1, s2)).toEqual(expectedResult);
+            thenShouldObtainExpectedResult(s1, s2, expectedResult);
         });
     });
 
@@ -219,10 +181,7 @@ describe('AnagramsSolver', () => {
         const expectedResult = 0;
 
         it(`should return ${expectedResult}`, () => {
-            expect(dumbLoopSolver.solve(s1, s2)).toEqual(expectedResult);
-            expect(smartLoopSolver.solve(s1, s2)).toEqual(expectedResult);
-            expect(mapSolver.solve(s1, s2)).toEqual(expectedResult);
-            expect(smartMapSolver.solve(s1, s2)).toEqual(expectedResult);
+            thenShouldObtainExpectedResult(s1, s2, expectedResult);
         });
     });
 
